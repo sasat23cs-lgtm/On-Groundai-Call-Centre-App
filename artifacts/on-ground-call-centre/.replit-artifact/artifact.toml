@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "On-Ground.ai Call Centre"
+description = "A responsive call-centre staff app for agents to manage a simulated call queue, customer context, notes, dispositions, and operational reporting with local demo persistence."
+version = "1.0.0"
+id = "artifacts/on-ground-call-centre"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22390
+
+[services.development]
+run = "pnpm --filter @workspace/on-ground-call-centre run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/on-ground-call-centre", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/on-ground-call-centre/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22390"
+BASE_PATH = "/"
