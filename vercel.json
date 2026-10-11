@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm --filter @workspace/on-ground-call-centre run build",
+  "outputDirectory": "artifacts/on-ground-call-centre/dist/public",
+  "installCommand": "pnpm install"
+}
