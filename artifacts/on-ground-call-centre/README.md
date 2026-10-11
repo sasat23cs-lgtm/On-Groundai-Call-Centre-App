@@ -45,25 +45,25 @@ Run the following from the workspace root (`On-Groundai-Call-Centre-App`):
 
 ```sh
 pnpm install
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run dev
+pnpm --filter @workspace/on-ground-call-centre run dev
 ```
 
 On Windows PowerShell:
 
 ```powershell
-$env:PORT=5173; $env:BASE_PATH="/"; pnpm --filter @workspace/on-ground-call-centre run dev
+pnpm --filter @workspace/on-ground-call-centre run dev
 ```
 
-Vite prints the local URL after it starts. `PORT` and `BASE_PATH` are required by the Vite configuration; `BASE_PATH` is normally `/` for local use.
+Vite prints the local URL after it starts. The configuration defaults to port `5173` and base path `/`; set `PORT` or `BASE_PATH` only when your environment needs different values.
 
 ## Checks and production preview
 
 From the workspace root:
 
 ```sh
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run typecheck
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run build
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run serve
+pnpm --filter @workspace/on-ground-call-centre run typecheck
+pnpm --filter @workspace/on-ground-call-centre run build
+pnpm --filter @workspace/on-ground-call-centre run serve
 ```
 
 The workspace-wide checks are also available through:
@@ -91,4 +91,3 @@ The seeded data is fictional. It uses a rolling demo timeline so the queue and h
 - Reports are illustrative operational summaries derived only from local fictional records.
 - Browser storage can be cleared by the user or browser, which removes saved demo changes.
 - AI assistance was used to help generate and improve this code and documentation.
-

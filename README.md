@@ -170,19 +170,17 @@ pnpm install
 
 ### Run the development server
 
-The Vite configuration requires both `PORT` and `BASE_PATH`.
+The Vite configuration defaults to port `5173` and base path `/`. Set `PORT` or `BASE_PATH` only when your environment needs different values.
 
 **macOS / Linux**
 
 ```bash
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run dev
+pnpm --filter @workspace/on-ground-call-centre run dev
 ```
 
 **Windows PowerShell**
 
 ```powershell
-$env:PORT = "5173"
-$env:BASE_PATH = "/"
 pnpm --filter @workspace/on-ground-call-centre run dev
 ```
 
@@ -191,8 +189,8 @@ Open the localhost URL printed by Vite, normally `http://localhost:5173`.
 ### Build and preview production output
 
 ```bash
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run build
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run serve
+pnpm --filter @workspace/on-ground-call-centre run build
+pnpm --filter @workspace/on-ground-call-centre run serve
 ```
 
 The production bundle is written to `artifacts/on-ground-call-centre/dist/public`.
@@ -255,8 +253,8 @@ These metrics are demonstration values, not production service-level metrics.
 Run the targeted application checks from the repository root:
 
 ```bash
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run typecheck
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/on-ground-call-centre run build
+pnpm --filter @workspace/on-ground-call-centre run typecheck
+pnpm --filter @workspace/on-ground-call-centre run build
 ```
 
 The latest verification covered:
@@ -293,22 +291,6 @@ This project is intentionally scoped as a frontend assignment demonstration:
 
 ## Troubleshooting
 
-### `PORT environment variable is required`
-
-Set `PORT` before starting Vite:
-
-```powershell
-$env:PORT = "5173"
-```
-
-### `BASE_PATH environment variable is required`
-
-Set `BASE_PATH` before starting Vite:
-
-```powershell
-$env:BASE_PATH = "/"
-```
-
 ### pnpm is not recognized
 
 Install or activate pnpm, then retry:
@@ -325,4 +307,3 @@ Open **Settings** and select **Reset demo data**. This clears the application’
 ## AI disclosure
 
 AI assistance was used to help develop, test, and document this project. The implementation and fictional sample records are provided solely as a frontend demonstration.
-
